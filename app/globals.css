@@ -1,26 +1,351 @@
 @import "tailwindcss";
 
+@custom-variant wide (@media (min-width: 1000px));
+
 :root {
-  --brand: #1d4ed8;
-  --brand-fg: #ffffff;
-  --accent: #f59e0b;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f1f5f9;
+  --ink: #0a0a0a;
+  --papier: #f6f1ea;
+  --vlak: #ede6dc;
+  --wit: #ffffff;
+  --oranje: #e0953a;
+  --link: #7a4510;
+  --oranje-hover: #c9842a;
 }
 
 @theme inline {
-  --color-brand: var(--brand);
-  --color-brand-fg: var(--brand-fg);
-  --color-accent: var(--accent);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-ink: var(--ink);
+  --color-papier: var(--papier);
+  --color-vlak: var(--vlak);
+  --color-wit: var(--wit);
+  --color-oranje: var(--oranje);
+  --color-link: var(--link);
+  --font-sans: var(--font-commissioner), sans-serif;
+  --font-serif: var(--font-source-serif), serif;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--papier);
+    color: var(--ink);
+    font-family: var(--font-commissioner), sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    font-style: normal;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-source-serif), serif;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 5vw, 3.7rem);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    max-width: 18em;
+  }
+
+  h2 {
+    margin-top: 2.25rem;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+}
+
+em,
+i,
+blockquote,
+address,
+cite {
+  font-style: normal;
+}
+
+::selection {
+  background: var(--oranje);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.surface-ink :focus-visible {
+  outline-color: var(--papier);
+}
+
+.surface-ink .menu-panel :focus-visible {
+  outline-color: var(--ink);
+}
+
+.page {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding: 4.25rem 1.25rem 5.5rem;
+}
+
+.measure {
+  max-width: 40rem;
+}
+
+.motto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  max-width: 68rem;
+  font-family: var(--font-source-serif), serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.motto-line {
+  font-size: clamp(1.85rem, 4vw, 2.85rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.motto-punch {
+  font-size: clamp(2.55rem, 6.2vw, 4.55rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.hub {
+  container-type: inline-size;
+}
+
+.hub-word {
+  font-family: var(--font-source-serif), serif;
+  font-size: clamp(3rem, 26cqi, 5.5rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.flow-label,
+.phone {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-synthesis: none;
+  font-style: normal;
+}
+
+.flow-label {
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.phone {
+  font-size: 1.0625rem;
+  letter-spacing: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.flow-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.flow-lines span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--oranje);
+  transform-origin: left center;
+  animation: flow-draw 680ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.flow-lines span:nth-child(2) {
+  height: 3px;
+  animation-delay: 80ms;
+}
+
+.flow-lines span:nth-child(3) {
+  height: 4px;
+  animation-delay: 150ms;
+}
+
+.flow-lines--mark span:nth-child(2) {
+  width: 86%;
+}
+
+.flow-lines--mark span:nth-child(3) {
+  width: 70%;
+}
+
+@keyframes flow-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.rise {
+  animation: rise 420ms ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.btn,
+.btn:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  background: var(--oranje);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--oranje-hover);
+}
+
+.btn-ink,
+.btn-ink:visited {
+  background: var(--ink);
+  color: var(--papier);
+}
+
+.btn-ink:hover {
+  background: #242424;
+}
+
+.link,
+.link:visited {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--ink);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field span {
+  font-weight: 500;
+  font-size: 1.0625rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 44px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  background: var(--wit);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  padding: 0.65rem 0.75rem;
+}
+
+.field textarea {
+  min-height: 9.5rem;
+  resize: vertical;
+}
+
+.ruled {
+  margin-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.ruled li {
+  border-bottom: 1px solid var(--ink);
+  padding: 0.75rem 0;
+}
+
+figcaption {
+  margin-top: 0.65rem;
+  max-width: 40rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 80;
+  transform: translateY(-160%);
+  background: var(--wit);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  padding: 0.55rem 0.9rem;
+  font-size: 1.0625rem;
+}
+
+.skip:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .flow-lines span,
+  .rise {
+    animation: none;
+    transform: none;
+  }
 }

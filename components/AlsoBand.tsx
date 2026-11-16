@@ -12,7 +12,7 @@ export default function AlsoBand({ except, title = content.shared.also }: { exce
   const items = content.home.fields.filter((field) => field.href !== except);
   return (
     <section className="mt-16" aria-label={title} data-section="ook">
-      <h2>{title}</h2>
+      <h2 className="mt-0">{title}</h2>
       <div className="also-row mt-5">
         {items.map((field) => (
           <Link key={field.href} href={field.href}>

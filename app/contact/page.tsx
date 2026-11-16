@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div>
           <h1>{contact.title}</h1>
           <p className="mt-8">{contact.intro}</p>
-          <div className="close-band mt-8">
+          <div className="close-band close-band--in">
             <p className="font-serif text-[2rem] leading-none font-semibold">{shared.anytime}</p>
             <address className="mt-5 not-italic">
               {company.name}

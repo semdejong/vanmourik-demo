@@ -41,15 +41,19 @@ export default function Home() {
         </div>
       </section>
 
-      <figure data-section="kopstrook" className="mt-14">
+      <figure data-section="kopstrook" className="kopfig mt-16">
         <HonestImage src="/img/foto-kop.jpg" alt={home.stripAlt} width={559} height={144} />
+        <figcaption>{home.stripCaption}</figcaption>
       </figure>
+
+      <section data-section="uitnodiging" className="measure mt-16">
+        <p>{home.look}</p>
+      </section>
 
       <WarmteFields />
 
-      <section data-section="uitnodiging" className="measure mt-20">
-        <p>{home.look}</p>
-        <p className="mt-4">{home.invite}</p>
+      <section className="measure mt-16">
+        <p>{home.invite}</p>
       </section>
 
       <section className="close-band" data-section="adres">

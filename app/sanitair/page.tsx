@@ -16,12 +16,10 @@ export default function SanitairPage() {
   const { sanitair } = content;
   return (
     <PageFrame section="sanitair">
-      <div className="grid items-end gap-10 min-[800px]:grid-cols-[1fr_9rem]">
-        <div>
-          <h1>{sanitair.title}</h1>
-          <p className="mt-8 max-w-[40rem]">{sanitair.bridge}</p>
-          <p className="mt-6 font-serif text-[clamp(2rem,4vw,3rem)] leading-none font-semibold">{sanitair.soft}</p>
-        </div>
+      <h1>{sanitair.title}</h1>
+      <p className="mt-8 max-w-[40rem]">{sanitair.bridge}</p>
+      <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
+        <p className="font-serif text-[clamp(2.2rem,4.5vw,3.2rem)] leading-none font-semibold whitespace-nowrap">{sanitair.soft}</p>
         <StripCrop x={88} width={112} alt={sanitair.bathAlt} caption={sanitair.bathCaption} />
       </div>
 
@@ -31,15 +29,13 @@ export default function SanitairPage() {
       <p className="mt-8 max-w-[28rem] font-serif text-[clamp(1.45rem,2.5vw,1.85rem)] leading-snug font-semibold">
         {sanitair.close}
       </p>
-      <div className="mt-10 flex flex-wrap items-end gap-8">
-        <figure>
+      <figure className="mt-10">
+        <div className="flex flex-wrap items-end gap-8">
           <HonestImage src="/img/ontharder1.jpg" alt={sanitair.photoAlt} width={452} height={169} />
-        </figure>
-        <figure>
           <HonestImage src="/img/ontharder2.jpg" alt={sanitair.photoAltSmall} width={150} height={150} />
-          <figcaption>{sanitair.caption}</figcaption>
-        </figure>
-      </div>
+        </div>
+        <figcaption>{sanitair.caption}</figcaption>
+      </figure>
       <ContactLinks />
       <AlsoBand except="/sanitair" />
     </PageFrame>

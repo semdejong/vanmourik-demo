@@ -11,7 +11,7 @@ const place: Record<string, string> = {
 export default function WarmteFields() {
   const { fields, hub } = content.home;
   return (
-    <section aria-label="Specialiteiten" data-section="specialiteiten" className="mt-20 border border-ink bg-ink">
+    <section aria-label="Specialiteiten" data-section="specialiteiten" className="mt-8 border border-ink bg-ink">
       <div className="grid grid-cols-1 gap-px min-[800px]:grid-cols-3 min-[800px]:grid-rows-2">
         <p className="hub order-first m-0 flex min-h-48 items-center justify-center bg-oranje p-6 text-ink min-[800px]:col-start-2 min-[800px]:row-span-2 min-[800px]:row-start-1 sm:p-8">
           <span className="hub-word">{hub}</span>

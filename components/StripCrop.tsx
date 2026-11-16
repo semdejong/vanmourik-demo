@@ -14,8 +14,8 @@ export default function StripCrop({
   caption: string;
 }) {
   return (
-    <figure>
-      <div className="relative overflow-hidden" style={{ maxWidth: width, aspectRatio: `${width} / ${SRC_H}` }}>
+    <figure className="stamp">
+      <div className="stamp-frame" style={{ width, aspectRatio: `${width} / ${SRC_H}` }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/img/foto-kop.jpg"

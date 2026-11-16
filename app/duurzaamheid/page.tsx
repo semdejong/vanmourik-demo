@@ -18,7 +18,7 @@ export default function DuurzaamheidPage() {
     <PageFrame section="duurzaamheid">
       <h1>{page.title}</h1>
       <p className="mt-8 max-w-[40rem]">{page.bridge}</p>
-      <div className="marks mt-10 max-w-3xl">
+      <div className="marks mt-10 max-w-[42rem]">
         {page.marks.map((mark) => (
           <article key={mark.value} className="mark">
             <strong>{mark.value}</strong>

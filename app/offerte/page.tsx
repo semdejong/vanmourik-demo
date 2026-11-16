@@ -15,7 +15,7 @@ export default function OffertePage() {
       <h1>{offerte.title}</h1>
       <p className="greeting mt-6">{offerte.greeting}</p>
       <p className="mt-6 max-w-[36rem]">{offerte.intro}</p>
-      <div className="mt-4 grid items-start gap-12 min-[900px]:grid-cols-[minmax(0,36rem)_16rem]">
+      <div className="mt-10 grid items-start gap-x-12 gap-y-10 min-[900px]:grid-cols-[minmax(0,36rem)_minmax(16rem,1fr)]">
         <MailForm
           email={company.email}
           subject={form.offerteSubject}
@@ -24,7 +24,7 @@ export default function OffertePage() {
           cta="offerte"
           labels={form}
         />
-        <aside className="border border-ink bg-vlak p-5">
+        <aside className="w-full max-w-64 justify-self-end border border-ink bg-vlak p-5">
           <p>{offerte.phonesLead}</p>
           <div className="mt-4 flex flex-col items-start gap-2">
             {company.phones.map((phone) => (

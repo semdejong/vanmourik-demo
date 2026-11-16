@@ -67,6 +67,7 @@ export const content = {
     invite:
       "Mocht u vragen hebben of vrijblijvend een offerte willen aanvragen, dan kunt u te allen tijde contact met ons opnemen.",
     hub: "warmte",
+    stripCaption: "Badkamer, dakraam en paneelradiator, uit de kop van de website.",
     stripAlt:
       "Smalle strook: links een badkamer met douche en wastafel, in het midden een dakraam in een pannendak, rechts een paneelradiator.",
     fields: [
@@ -203,9 +204,9 @@ export const content = {
       "Doe het zelf: neem contact op met Van Mourik Installatietechniek en praat het door.",
     body: "Hebt u een vraag over iets wat u zelf wilt doen, dan praten wij dat met u door. Bel of mail ons. U kunt ook vrijblijvend een offerte aanvragen.",
     steps: [
-      { n: "01", title: "Uw vraag", text: "Hebt u een vraag over iets wat u zelf wilt doen." },
-      { n: "02", title: "Het gesprek", text: "Dan praten wij dat met u door. U belt of mailt, en wij bespreken het." },
-      { n: "03", title: "Vrijblijvend", text: "Een offerte aanvragen kan ook, zonder verplichting." },
+      { n: "1", title: "Uw vraag", text: "Hebt u een vraag over iets wat u zelf wilt doen." },
+      { n: "2", title: "Het gesprek", text: "Dan praten wij dat met u door. U belt of mailt, en wij bespreken het." },
+      { n: "3", title: "Vrijblijvend", text: "Een offerte aanvragen kan ook, zonder verplichting." },
     ],
   },
 

@@ -132,7 +132,7 @@ export default function HeaderBar({
       <nav
         id="mobiel-menu"
         aria-label={menuName}
-        className={`menu-panel absolute inset-x-0 top-full z-50 max-h-[calc(100dvh-7rem)] overflow-y-auto border-b border-ink bg-papier text-ink wide:hidden ${
+        className={`menu-panel absolute inset-x-0 top-full z-50 min-h-[calc(100dvh-100%)] overflow-y-auto border-b border-ink bg-papier text-ink wide:hidden ${
           open ? "block" : "hidden"
         }`}
       >

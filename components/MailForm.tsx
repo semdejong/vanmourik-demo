@@ -57,7 +57,7 @@ export default function MailForm({
       method="post"
       encType="text/plain"
       aria-describedby={noteId}
-      className="mt-8 grid max-w-xl gap-5"
+      className="grid max-w-xl gap-5"
     >
       <p id={noteId}>{note}</p>
       <label className="field">

@@ -97,11 +97,25 @@ export const content = {
     ],
   },
 
+  shared: {
+    qualities: ["Advies op maat", "Kwaliteit", "Flexibiliteit", "Vakmanschap"],
+    fronts: [
+      { title: "Nieuwbouw", text: "Op alle fronten van een nieuwbouw." },
+      { title: "Verbouw", text: "Of juist een verbouw." },
+    ],
+    also: "De andere specialiteiten",
+    all: "De specialiteiten",
+    anytime: "Te allen tijde",
+  },
+
   verwarming: {
     title: "Verwarming",
     description:
       "Aanleg en reparatie van verwarming en CV door Van Mourik Installatietechniek in Vroomshoop.",
+    display: "Aanleg en reparatie van verwarming en CV.",
     body: "Van Mourik Installatietechniek in Vroomshoop is gespecialiseerd in de aanleg en reparatie van verwarming en CV. Wij bieden u advies op maat, kwaliteit, flexibiliteit en vakmanschap. Dit kunnen wij u bieden door meer dan twintig jaar ervaring op alle fronten van een nieuwbouw of juist verbouw.",
+    cropAlt: "Paneelradiator.",
+    cropCaption: "Paneelradiator, uit de kopstrook van de website.",
   },
 
   sanitair: {
@@ -124,7 +138,10 @@ export const content = {
       "Daling van uw energiekosten",
     ],
     close: "BWT-waterontharders maken het verschil voor uw hele gezin!",
+    soft: "Zijdezacht water.",
     caption: "Foto's van BWT.",
+    bathAlt: "Badkamer met douche en wastafel.",
+    bathCaption: "Badkamer, uit de kopstrook van de website.",
     photoAlt:
       "Blauwe BWT-waterontharder met een zak zout en een filter, bij een koperen leidingset.",
     photoAltSmall: "Blauwe BWT-waterontharder. Iemand zit op de kap.",
@@ -134,7 +151,9 @@ export const content = {
     title: "Dakwerk",
     description:
       "Aanleg en reparatie van dakwerk door Van Mourik Installatietechniek in Vroomshoop.",
+    display: "Aanleg en reparatie van dakwerk.",
     body: "Van Mourik Installatietechniek in Vroomshoop is gespecialiseerd in de aanleg en reparatie van dakwerk, naast verwarming, CV, sanitair en duurzaamheid.",
+    beside: "Dakwerk staat naast verwarming, CV, sanitair en duurzaamheid. Niet in plaats daarvan.",
     caption: "Dakraam in een pannendak, uit de kopstrook van de website.",
     alt: "Dakraam in een pannendak.",
   },
@@ -146,6 +165,16 @@ export const content = {
     bridge:
       "Duurzaamheid hoort bij de specialisatie van Van Mourik Installatietechniek, naast verwarming, CV, dakwerk en sanitair. De tekst hieronder is van AWB en gaat over Het Hybride Wonen en de GeniaHybrid.",
     awbTitle: "AWB introduceert Het Hybride Wonen",
+    marks: [
+      {
+        value: "35%",
+        text: "Tot zoveel besparing op primaire energie en CO2-emissie noemt AWB bij de GeniaHybrid.",
+      },
+      {
+        value: "10 minuten",
+        text: "Zo vaak kan de DSI schakelen tussen de ketel en de warmtepomp.",
+      },
+    ],
     lead: "Met de perfecte balans tussen gas en elektra bespaart u het meest.",
     intro:
       "Met het Hybride Wonen biedt AWB u de optimale balans tussen gas en elektra. Daarmee kan er aanzienlijk op energielasten bespaard worden. De GeniaHybrid is een totaalsysteem dat bestaat uit een lucht/water warmtepomp en een HR-ketel. Het hele systeem wordt centraal aangestuurd door de unieke Dynamische Systeem Intelligentie (DSI). Met de optimale balans tussen warmtepomp en ketel kan het voordeel oplopen tot maar liefst 35% besparing op primaire energie en CO2-emissie. Voor woningbouwverenigingen levert dit een bijdrage op in de energielabelverbetering.",
@@ -173,6 +202,11 @@ export const content = {
     description:
       "Doe het zelf: neem contact op met Van Mourik Installatietechniek en praat het door.",
     body: "Hebt u een vraag over iets wat u zelf wilt doen, dan praten wij dat met u door. Bel of mail ons. U kunt ook vrijblijvend een offerte aanvragen.",
+    steps: [
+      { n: "01", title: "Uw vraag", text: "Hebt u een vraag over iets wat u zelf wilt doen." },
+      { n: "02", title: "Het gesprek", text: "Dan praten wij dat met u door. U belt of mailt, en wij bespreken het." },
+      { n: "03", title: "Vrijblijvend", text: "Een offerte aanvragen kan ook, zonder verplichting." },
+    ],
   },
 
   contact: {
@@ -187,7 +221,8 @@ export const content = {
     title: "Offerte",
     description:
       "Vrijblijvend een offerte aanvragen bij Van Mourik Installatietechniek in Vroomshoop.",
-    intro: "Vraag vrijblijvend een offerte aan.",
+    intro: "Vraag vrijblijvend een offerte aan. Hieronder schrijft u waar het om gaat.",
+    greeting: "Goedendag,",
     phonesLead: "Liever even bellen? Dat kan ook, te allen tijde.",
   },
 
@@ -208,16 +243,26 @@ export const content = {
     title: "Privacy",
     description:
       "Privacy van deze conceptwebsite: cookieloze meting, geen formulier op een server.",
-    paragraphs: [
-      "Dit is een conceptwebsite, gemaakt door Sleads voor Van Mourik Installatietechniek. Het is geen pagina uit de administratie van het bedrijf, en er staan hier geen juridische claims op die het bedrijf niet zelf heeft gepubliceerd.",
-      "De site plaatst geen cookies. Sleads meet een bezoek cookieloos, alleen om te zien of dit concept bekeken wordt. Er is geen account. Formulieren slaan niets op: een knop opent het e-mailprogramma op uw apparaat, gericht aan contact@mourikvan.nl.",
-      "Een vraag over het werk stelt u aan Van Mourik Installatietechniek. Een vraag over deze conceptsite kunt u stellen aan Sleads.",
+    blocks: [
+      {
+        title: "Concept",
+        text: "Dit is een conceptwebsite, gemaakt door Sleads voor Van Mourik Installatietechniek. Het is geen pagina uit de administratie van het bedrijf, en er staan hier geen juridische claims op die het bedrijf niet zelf heeft gepubliceerd.",
+      },
+      {
+        title: "Meting",
+        text: "De site plaatst geen cookies. Sleads meet een bezoek cookieloos, alleen om te zien of dit concept bekeken wordt. Er is geen account. Formulieren slaan niets op: een knop opent het e-mailprogramma op uw apparaat, gericht aan contact@mourikvan.nl.",
+      },
+      {
+        title: "Vragen",
+        text: "Een vraag over het werk stelt u aan Van Mourik Installatietechniek. Een vraag over deze conceptsite kunt u stellen aan Sleads.",
+      },
     ],
   },
 
   notFound: {
     title: "Deze pagina bestaat niet",
-    body: "Het adres klopt niet, of de pagina is er niet. Ga terug naar de startpagina, of neem contact op.",
+    mark: "404",
+    body: "Het adres klopt niet, of de pagina is er niet. Ga terug naar de startpagina, of kijk bij een specialiteit.",
     home: "Naar de startpagina",
     contact: "Contact",
   },

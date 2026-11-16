@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { content } from "@/content";
-import PageFrame from "@/components/PageFrame";
 import MailForm from "@/components/MailForm";
+import PageFrame from "@/components/PageFrame";
 
 export const metadata: Metadata = {
   title: content.offerte.title,
@@ -12,9 +12,10 @@ export default function OffertePage() {
   const { offerte, company, form } = content;
   return (
     <PageFrame section="offerte">
-      <div className="measure">
-        <h1>{offerte.title}</h1>
-        <p className="mt-8">{offerte.intro}</p>
+      <h1>{offerte.title}</h1>
+      <p className="greeting mt-6">{offerte.greeting}</p>
+      <p className="mt-6 max-w-[36rem]">{offerte.intro}</p>
+      <div className="mt-4 grid items-start gap-12 min-[900px]:grid-cols-[minmax(0,36rem)_16rem]">
         <MailForm
           email={company.email}
           subject={form.offerteSubject}
@@ -23,15 +24,25 @@ export default function OffertePage() {
           cta="offerte"
           labels={form}
         />
-        <p className="mt-12">{offerte.phonesLead}</p>
-        <div className="mt-4 flex flex-col items-start gap-2">
-          {company.phones.map((phone) => (
-            <a key={phone.href} href={phone.href} data-cta="bellen" className="inline-flex min-h-11 items-center gap-3">
-              <span>{phone.label}</span>
-              <span className="phone text-link">{phone.display}</span>
+        <aside className="border border-ink bg-vlak p-5">
+          <p>{offerte.phonesLead}</p>
+          <div className="mt-4 flex flex-col items-start gap-2">
+            {company.phones.map((phone) => (
+              <a key={phone.href} href={phone.href} data-cta="bellen" className="inline-flex min-h-11 items-center gap-3">
+                <span>{phone.label}</span>
+                <span className="phone text-link">{phone.display}</span>
+              </a>
+            ))}
+            <a href={`mailto:${company.email}`} data-cta="mailen" className="link inline-flex min-h-11 items-center">
+              {company.email}
             </a>
-          ))}
-        </div>
+          </div>
+          <p className="mt-6">
+            {company.street}
+            <br />
+            {company.postalCode} {company.city}
+          </p>
+        </aside>
       </div>
     </PageFrame>
   );

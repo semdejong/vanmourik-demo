@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { content } from "@/content";
+import SleadsBadge from "@/components/SleadsBadge";
 import Year from "@/components/Year";
 
 export default function Footer() {
@@ -25,13 +26,11 @@ export default function Footer() {
             {company.email}
           </a>
         </div>
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
           <Link href="/privacy" className="link inline-flex min-h-11 items-center">
             {ui.privacy}
           </Link>
-          <a href={ui.sleads} target="_blank" rel="noopener noreferrer" className="link inline-flex min-h-11 items-center">
-            {ui.concept}
-          </a>
+          <SleadsBadge />
         </div>
         <p className="mt-8">
           © <Year /> {company.name}

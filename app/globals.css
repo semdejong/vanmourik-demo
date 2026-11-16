@@ -306,6 +306,174 @@ cite {
   padding: 0.75rem 0;
 }
 
+@media (min-width: 720px) {
+  .ruled-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ruled-split li:nth-child(odd) {
+    padding-right: 1.25rem;
+  }
+
+  .ruled-split li:nth-child(even) {
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--ink);
+  }
+}
+
+.word-row,
+.fronts,
+.also-row {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.word-row li,
+.fronts div,
+.also-row a {
+  background: var(--papier);
+  color: var(--ink);
+  min-height: 4.5rem;
+}
+
+.word-row li {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 1rem 0.9rem;
+  font-family: var(--font-source-serif), serif;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.fronts div {
+  padding: 1.15rem 1.1rem 1.25rem;
+}
+
+.fronts h2 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.fronts p {
+  margin: 0.35rem 0 0;
+}
+
+.also-row a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.15rem 1.1rem 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.also-row a:hover {
+  background: var(--vlak);
+}
+
+.step {
+  display: grid;
+  gap: 0.35rem 1.5rem;
+  border-top: 1px solid var(--ink);
+  padding: 1.35rem 0;
+}
+
+.step:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+
+.step-n {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-synthesis: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+}
+
+.marks {
+  display: grid;
+  gap: 1rem;
+}
+
+.mark {
+  border: 1px solid var(--ink);
+  background: var(--vlak);
+  padding: 1.15rem 1.1rem 1.25rem;
+}
+
+.mark strong {
+  display: block;
+  font-family: var(--font-source-serif), serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.greeting {
+  font-family: var(--font-source-serif), serif;
+  font-size: clamp(3.1rem, 8vw, 5.6rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+
+.close-band {
+  margin-top: 4.5rem;
+  background: var(--ink);
+  color: var(--papier);
+  padding: 2.2rem 1.4rem 2.4rem;
+}
+
+.close-band a.phone {
+  color: var(--papier);
+}
+
+@media (min-width: 700px) {
+  .word-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .fronts,
+  .marks {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.btn-paper,
+.btn-paper:visited {
+  background: var(--papier);
+  color: var(--ink);
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-synthesis: none;
+  text-decoration: none;
+}
+
+.btn-paper:hover {
+  background: var(--wit);
+}
+
+@media (min-width: 800px) {
+  .also-row {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+
+  .step {
+    grid-template-columns: 5.5rem 1fr;
+    align-items: baseline;
+  }
+}
+
 figcaption {
   margin-top: 0.65rem;
   max-width: 40rem;

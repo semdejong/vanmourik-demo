@@ -3,6 +3,7 @@ import Link from "next/link";
 import { content } from "@/content";
 import FlowLines from "@/components/FlowLines";
 import HonestImage from "@/components/HonestImage";
+import Practice from "@/components/Practice";
 import WarmteFields from "@/components/WarmteFields";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const { home, company } = content;
+  const { home, company, shared } = content;
   const [mottoLine, mottoPunch] = company.motto.split(": ");
 
   return (
@@ -24,6 +25,8 @@ export default function Home() {
         <p className="mt-8">{home.intro}</p>
         <p className="mt-6 font-serif text-[1.65rem] leading-snug font-semibold">{home.experience}</p>
       </header>
+
+      <Practice />
 
       <section data-section="motto" className="mt-20">
         <p>{company.mottoLead}</p>
@@ -47,15 +50,29 @@ export default function Home() {
       <section data-section="uitnodiging" className="measure mt-20">
         <p>{home.look}</p>
         <p className="mt-4">{home.invite}</p>
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+      </section>
+
+      <section className="close-band" data-section="adres">
+        <p className="font-serif text-[clamp(2.2rem,5vw,3.4rem)] leading-none font-semibold">{shared.anytime}</p>
+        <address className="mt-6 not-italic">
+          {company.name}
+          <br />
+          {company.street}
+          <br />
+          {company.postalCode} {company.city}
+        </address>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link href="/offerte" data-cta="offerte" className="btn">
             {content.ui.quote}
           </Link>
           {company.phones.map((phone) => (
-            <a key={phone.href} href={phone.href} data-cta="bellen" className="btn btn-ink phone">
+            <a key={phone.href} href={phone.href} data-cta="bellen" className="btn btn-paper">
               {phone.display}
             </a>
           ))}
+          <a href={`mailto:${company.email}`} data-cta="mailen" className="phone inline-flex min-h-11 items-center">
+            {company.email}
+          </a>
         </div>
       </section>
     </article>
